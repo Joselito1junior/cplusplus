@@ -27,8 +27,13 @@ class SalesScore
         string getStoreTitle();
         void bootSystem();
         void calcSalesAverage();
+        void enterProducts();
+        void productsReport();
 
     private: // Especificador de acesso - Acessível apenas as funções membro dessa classe
         string storeTitle;
+        int prodA;
+        int prodB;
+        int prodC;
 
 };

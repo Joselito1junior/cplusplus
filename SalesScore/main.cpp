@@ -19,10 +19,10 @@ int main()
     SalesScore myStore1("WR STORE");
 
     myStore1.bootSystem();
-    myStore1.calcSalesAverage();
+    myStore1.enterProducts();
+    myStore1.productsReport();
 
     cout << endl;
 
     return 0;
-
 }

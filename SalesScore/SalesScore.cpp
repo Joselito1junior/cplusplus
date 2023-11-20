@@ -13,6 +13,9 @@
 SalesScore::SalesScore(string title)
 {
     setStoreTitle(title);
+    prodA = 0;
+    prodB = 0;
+    prodC = 0;
 }
 
 // ==========================================================
@@ -71,3 +74,45 @@ void SalesScore::calcSalesAverage()
 
 }
 
+// ==========================================================
+void SalesScore::enterProducts()
+{
+    int product;
+    cout << "Insira o produto vendido: " << endl
+         << "Ou tecle crtl+z (windows) ou ctrl+d (linux) para finalizar." << endl;
+
+    while((product = cin.get()) != EOF)
+    {
+        switch(product)
+        {
+            case 'a':
+            case 'A':
+                prodA++;
+                break;
+            case 'b':
+            case 'B':
+                prodB++;
+                break;
+            case 'c':
+            case 'C':
+                prodC++;
+                break;
+            case '\n': //Novas linhas
+            case '\b': //Tabulação
+            case ' ':  //Espaço em branco
+                break;
+            default:
+                cout << "Produto não cadastrado, insira um produto válido!" << endl;
+        }
+    }
+}
+
+// ==========================================================
+void SalesScore::productsReport()
+{
+    cout << "\n------------------------------------------"
+          << "\nResumo dos produtos vendidos."
+          << "\nProduto A: " << prodA
+          << "\nProduto B: " << prodB
+          << "\nProduto C: " << prodC << endl;
+}
